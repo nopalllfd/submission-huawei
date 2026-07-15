@@ -1,0 +1,11 @@
+# Collect data setiap hari pukul 08.00 WIB
+0 8 * * * node /home/ubuntu/huawei/automation/collectData.js
+
+# Collect data setiap hari pukul 12.00 WIB
+0 12 * * * node /home/ubuntu/huawei/automation/collectData.js
+
+# Collect data setiap hari pukul 15.00 WIB
+0 15 * * * node /home/ubuntu/huawei/automation/collectData.js
+
+# Data cleansing setiap hari pukul 00.00 WIB
+0 0 * * * node /home/ubuntu/huawei/automation/cleanup.js
