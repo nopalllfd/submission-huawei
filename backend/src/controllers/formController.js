@@ -9,14 +9,14 @@ export const createForm = (req, res) => {
 
   if (!name || !email || !message) {
     return res.status(400).json({
-      message: "Semua field wajib diisi",
+      message: 'Semua field wajib diisi',
     });
   }
 
   forms.push({ name, email, message });
 
   res.status(201).json({
-    message: "Data berhasil disimpan",
+    message: 'Data berhasil disimpan',
     data: { name, email, message },
   });
 };
