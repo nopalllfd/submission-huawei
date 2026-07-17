@@ -5,10 +5,18 @@ export const getForms = (req, res) => {
 };
 
 export const createForm = (req, res) => {
-  forms.push(req.body);
+  const { name, email, message } = req.body;
+
+  if (!name || !email || !message) {
+    return res.status(400).json({
+      message: "Semua field wajib diisi",
+    });
+  }
+
+  forms.push({ name, email, message });
 
   res.status(201).json({
-    message: 'Data berhasil disimpan',
-    data: req.body,
+    message: "Data berhasil disimpan",
+    data: { name, email, message },
   });
 };
